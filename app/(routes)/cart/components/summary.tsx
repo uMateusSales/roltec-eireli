@@ -56,7 +56,7 @@ const Summary = () => {
 
       <Link
         target="_blank"
-        href={`https://api.whatsapp.com/send?phone=5581986379256&text=######%20PEDIDO%20########%0A%0A%0AProdutos:%20%0A####################
+        href={`https://api.whatsapp.com/send?phone=5581986379255&text=######%20PEDIDO%20########%0A%0A%0AProdutos:%20%0A####################
         ${cart.map(
           (i) =>
             `%0A%0A######%0A%0A%20Nome%20do%20produto:%20${i.name}%0A%0AValor:%20R$${i.price},00%0A%0AQuantidade:%20${i.quantity}%0A%0A########`

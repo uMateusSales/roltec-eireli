@@ -9,7 +9,7 @@ import getProducts from "@/actions/get-products";
 export const revalidate = 0;
 
 const HomePage = async () => {
-  const billboard = await getBillboard("f81a927b-84af-4dc0-b084-5ec234b97542");
+  const billboard = await getBillboard("d98d2f9c-c3ad-49a8-b3a9-78cfd3d7d1a8");
   const produtos = await getProducts({ isFeatured: true });
 
   return (
