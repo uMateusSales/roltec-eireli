@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
@@ -10,7 +11,7 @@ import ToastProvider from "@/providers/toast-provider";
 const fonte = Urbanist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Roltec Rolamentos",
+  title: "Roltec rolamentos",
   description: "Rolamentos e correias",
 };
 
@@ -30,6 +31,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
