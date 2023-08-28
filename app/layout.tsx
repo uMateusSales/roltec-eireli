@@ -20,9 +20,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <head>
-      <link rel="icon" href="images/icon.ico" sizes="any" />
+        <link rel="icon" href="images/icon.ico" sizes="any" />
       </head>
       <body className={fonte.className}>
         <ModalProvider />

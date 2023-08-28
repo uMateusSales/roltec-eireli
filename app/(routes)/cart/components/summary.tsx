@@ -1,7 +1,7 @@
 "use client";
 
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
 import Button from "@/components/ui/button";
@@ -50,18 +50,35 @@ const Summary = () => {
 
     const phoneWhats = "5581986379255";
 
-    const textWhats = `#####PEDIDO###${cart?.map(
+    const textWhats = `########  PEDIDO REALIZADO NO SITE  ######## 
+    
+    ################################
+    ${cart?.map(
       (i) =>
-        `####%0ANOME%20DO%20PRODUTO:%20${i.name}%0A%0APRE%C3%87O:R$${i.price},00%0A%0AQUANTIDADE:${i.quantity}%0A%0A#`
-    )}############%0A%0A%0ATOTAL%20DO%20PEDIDO:R$${totalPrice},00%20`;
+        `
+         Produto: *${i.name}* 
+        
+         Preço: *R$${i.price},00*     
 
-    const whatsMobile = `whatsapp://send?text=${textWhats}&phone=+${phoneWhats}&abid=+${phoneWhats}`;
+         Quantidade: *${i.quantity}*   
+        
+        ################################
+        `
+    )}
+    
+    -------------- TOTAL: *R$${totalPrice},00* -------------`;
+
+    const whatsMobile =
+      `whatsapp://send?phone=${phoneWhats}&text=` +
+      encodeURIComponent(textWhats);
 
     if (width < 720) {
       return whatsMobile;
     }
 
-    return `https://web.whatsapp.com/send?text=${textWhats}&phone=+${phoneWhats}abid=+${phoneWhats}`;
+    return `https://web.whatsapp.com/send?phone=${phoneWhats}&text=${encodeURIComponent(
+      textWhats
+    )}&app_abs`;
   };
 
   return (
