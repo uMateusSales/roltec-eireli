@@ -13,8 +13,6 @@ import useCart from "@/hooks/use-cart";
 import { toast } from "react-hot-toast";
 import Link from "next/link";
 
-const phoneWhats = "5581986379255";
-
 const Summary = () => {
   const cart = useCart((state) => state.items);
   const removeAll = useCart((state) => state.removeAll);
@@ -44,10 +42,27 @@ const Summary = () => {
     window.location = response.data.url;
   };
 
-  const textWhats = `#####PEDIDO###${cart?.map(
-    (i) =>
-      `####%0ANOME%20DO%20PRODUTO:%20${i.name}%0A%0APRE%C3%87O:R$${i.price},00%0A%0AQUANTIDADE:${i.quantity}%0A%0A#`
-  )}############%0A%0A%0ATOTAL%20DO%20PEDIDO:R$${totalPrice},00%20`;
+  const getLink = () => {
+    let width =
+      window.innerWidth ||
+      document.documentElement.clientWidth ||
+      document.body.clientWidth;
+
+    const phoneWhats = "5581986379255";
+
+    const textWhats = `#####PEDIDO###${cart?.map(
+      (i) =>
+        `####%0ANOME%20DO%20PRODUTO:%20${i.name}%0A%0APRE%C3%87O:R$${i.price},00%0A%0AQUANTIDADE:${i.quantity}%0A%0A#`
+    )}############%0A%0A%0ATOTAL%20DO%20PEDIDO:R$${totalPrice},00%20`;
+
+    const whatsMobile = `whatsapp://send?text=${textWhats}&phone=+${phoneWhats}&abid=+${phoneWhats}`;
+
+    if (width < 720) {
+      return whatsMobile;
+    }
+
+    return `https://web.whatsapp.com/send?text=${textWhats}&phone=+${phoneWhats}abid=+${phoneWhats}`;
+  };
 
   return (
     <div className="mt-16 rounded-lg bg-gray-50 px-4 py-6 sm:p-6 lg:col-span-5 lg:mt-0 lg:p-8">
@@ -61,10 +76,7 @@ const Summary = () => {
         </div>
       </div>
 
-      <Link
-        target="_blank"
-        href={`https://web.whatsapp.com/send?phone=${phoneWhats}&text=${textWhats}&app_abs`}
-      >
+      <Link target="_blank" href={getLink()}>
         <Button disabled={cart.length === 0} className="w-full mt-6">
           Finalizar pedido
         </Button>
