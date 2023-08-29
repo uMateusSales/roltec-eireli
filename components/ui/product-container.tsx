@@ -9,6 +9,8 @@ import { useRouter } from "next/navigation";
 import { MouseEventHandler } from "react";
 import usePreviewModal from "@/hooks/use-preview-modal";
 import useCart from "@/hooks/use-cart";
+import useWindowDimensions from "@/hooks/use-window";
+import Link from "next/link";
 
 interface ProductContainerProps {
   data: Product;
@@ -17,8 +19,9 @@ interface ProductContainerProps {
 const ProductContainer: React.FC<ProductContainerProps> = ({ data }) => {
   const router = useRouter();
   const previewModal = usePreviewModal();
-
   const cart = useCart();
+  const { width, height } = useWindowDimensions();
+
   const handleClick = () => {
     router.push(`/product/${data?.id}`);
   };
@@ -33,6 +36,12 @@ const ProductContainer: React.FC<ProductContainerProps> = ({ data }) => {
     cart.addItem(data);
   };
 
+  const hideButtons = () => {
+    if (width !== undefined && width < 600) {
+      return false;
+    } else return true;
+  };
+
   return (
     <div
       onClick={handleClick}
@@ -45,23 +54,24 @@ const ProductContainer: React.FC<ProductContainerProps> = ({ data }) => {
           alt="Image"
           className="aspect-square object-cover rounded-md"
         />
-
-        <div className="opacity-0 group-hover:opacity-100 transition absolute w-full px-6 bottom-5">
-          <div className="flex gap-x-6 justify-center">
-            <div className="flex items-center bg-slate-100 rounded-md p-1">
-              <IconButton
-                onClick={onPreview}
-                icon={<Expand size={14} className="text-gray-700" />}
-              />
-            </div>
-            <div className="flex items-center bg-slate-100 rounded-md p-1">
-              <IconButton
-                onClick={addToCart}
-                icon={<ShoppingCart size={14} className="text-gray-700" />}
-              />
+        {hideButtons() && (
+          <div className="opacity-0 group-hover:opacity-100 transition absolute w-full px-6 bottom-5">
+            <div className="flex gap-x-6 justify-center">
+              <div className="flex items-center bg-slate-100 rounded-md p-1">
+                <IconButton
+                  onClick={onPreview}
+                  icon={<Expand size={14} className="text-gray-700" />}
+                />
+              </div>
+              <div className="flex items-center bg-slate-100 rounded-md p-1">
+                <IconButton
+                  onClick={addToCart}
+                  icon={<ShoppingCart size={14} className="text-gray-700" />}
+                />
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
       <div className="font-semibold text-lg">
         <p>{data.name}</p>
