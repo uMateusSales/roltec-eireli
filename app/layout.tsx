@@ -3,10 +3,13 @@ import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 
+
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import ModalProvider from "@/providers/modal-provider";
 import ToastProvider from "@/providers/toast-provider";
+import { Suspense } from "react";
+
 
 const fonte = Urbanist({ subsets: ["latin"] });
 
@@ -23,12 +26,14 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
-        <link rel="icon" href="images/icon.ico" sizes="any" />
+      <link rel="icon" href="images/icon.ico" sizes="any" />
       </head>
       <body className={fonte.className}>
         <ModalProvider />
         <ToastProvider />
+     
         <Navbar />
+      
         {children}
         <Footer />
         <Analytics />

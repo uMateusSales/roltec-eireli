@@ -1,3 +1,4 @@
+import CartItems from "@/app/(routes)/cart/components/cart-items";
 import { Billboard as BillboardType } from "@/types";
 
 interface BillboardProps {
@@ -5,6 +6,8 @@ interface BillboardProps {
 }
 
 const Billboard: React.FC<BillboardProps> = ({ data }) => {
+
+ 
   return (
     <div className="p-4 sm:p-6 lg:p-8 rounded-xl overflow-hidden">
       <div

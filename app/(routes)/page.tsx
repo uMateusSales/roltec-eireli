@@ -1,10 +1,12 @@
-import React from "react";
+import React, { Suspense } from "react";
 
 import Container from "@/components/ui/container";
 import Billboard from "@/components/billboard";
 import getBillboard from "@/actions/get-billboards";
 import ProductList from "@/components/product-list";
 import getProducts from "@/actions/get-products";
+import { Skeleton } from "@/components/ui/skeleton";
+
 
 export const revalidate = 0;
 
@@ -15,10 +17,14 @@ const HomePage = async () => {
   return (
     <Container>
       <div className="space-y-10 pb-10">
+  <Suspense fallback={<h1> carregando banner</h1>
+}>
         <Billboard data={billboard} />
-
+        </Suspense>
         <div className="flex flex-col gap-y-8 px-4 sm:px=6 lg:px-8">
+
           <ProductList title="Produtos disponiveis" items={produtos} />
+      
         </div>
       </div>
     </Container>
