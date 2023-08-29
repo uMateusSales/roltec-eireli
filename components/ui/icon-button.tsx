@@ -5,15 +5,21 @@ interface IconButtonProps {
   onClick?: MouseEventHandler<HTMLButtonElement> | undefined;
   icon: React.ReactElement;
   className?: string;
+  disabled?: boolean;
+  hidden?: boolean;
 }
 
 const IconButton: React.FC<IconButtonProps> = ({
   onClick,
   icon,
   className,
+  disabled,
+  hidden,
 }) => {
   return (
     <button
+      hidden={hidden}
+      disabled={disabled}
       onClick={onClick}
       className={
         (cn(

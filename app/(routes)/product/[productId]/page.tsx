@@ -19,11 +19,13 @@ const ProductPage: React.FC<ProductPageProps> = async ({ params }) => {
         <div className="px-4 py10 sm:px6 lg:px-8">
           <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
             <Gallery images={product.images} />
+
             <div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
               <ProductInfo data={product} />
             </div>
           </div>
           <hr className="my-10" />
+
           <ProductList title="Produtos sugeridos" items={sugestProducts} />
         </div>
       </Container>
