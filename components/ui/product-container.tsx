@@ -10,7 +10,6 @@ import { MouseEventHandler } from "react";
 import usePreviewModal from "@/hooks/use-preview-modal";
 import useCart from "@/hooks/use-cart";
 import useWindowDimensions from "@/hooks/use-window";
-import Link from "next/link";
 
 interface ProductContainerProps {
   data: Product;
@@ -51,8 +50,10 @@ const ProductContainer: React.FC<ProductContainerProps> = ({ data }) => {
         <Image
           src={data?.images?.[0]?.url}
           fill
-          alt="Image"
+          alt="imagem do produto"
           className="aspect-square object-cover rounded-md"
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/OXbJgAJUAORqZ+bhAAAAABJRU5ErkJggg=="
         />
         {hideButtons() && (
           <div className="opacity-0 group-hover:opacity-100 transition absolute w-full px-6 bottom-5">

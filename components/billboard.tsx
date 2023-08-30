@@ -1,5 +1,4 @@
 import { Billboard as BillboardType } from "@/types";
-import { Suspense } from "react";
 
 interface BillboardProps {
   data: BillboardType;

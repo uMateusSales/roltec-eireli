@@ -23,6 +23,8 @@ const GalleryTab: React.FC<GalleryTabProps> = ({ image }) => {
               src={image.url}
               alt=""
               className="object-cover object-center"
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/OXbJgAJUAORqZ+bhAAAAABJRU5ErkJggg=="
             />
           </span>
           <span

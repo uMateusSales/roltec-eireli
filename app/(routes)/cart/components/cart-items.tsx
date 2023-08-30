@@ -40,7 +40,9 @@ const CartItems: React.FC<CartItemProps> = ({ data }) => {
           fill
           src={data.images[0].url}
           className="object-cover object-center"
-          alt="cart item"
+          alt="imagem do produto"
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/OXbJgAJUAORqZ+bhAAAAABJRU5ErkJggg=="
         />
       </div>
       <div className="relative ml-4 flex flex-1 flex-col justify-between sm:ml-6">
