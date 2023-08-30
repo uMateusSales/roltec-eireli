@@ -28,7 +28,7 @@ export default function RootLayout({
       </head>
 
       <body className={fonte.className}>
-        <NextTopLoader height={4} />
+
         <ModalProvider />
         <ToastProvider />
 

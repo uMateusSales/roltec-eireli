@@ -13,7 +13,7 @@ const Navbar = async () => {
       <Container>
         <div className="relative px-2 sm:px-6 lg:px-8 flex h-16 items-center">
           <Link href="/" className="ml-2 gap-x-2 lg:ml-0  sm:ml-3 sm:gap-x-3">
-            <p className="font-bold text-sm sm:text-base lg:text-xl">HOME</p>
+            <p className="font-bold text-xs sm:text-sm lg:text-xl">HOME</p>
           </Link>
           <MainNav data={categories} />
           <NavbarActions />

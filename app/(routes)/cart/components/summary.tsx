@@ -95,7 +95,7 @@ const Summary = () => {
 
       <Link target="_blank" href={getLink()}>
         <Button disabled={cart.length === 0} className="w-full mt-6">
-          Finalizar pedido
+          Finalizar pedido pelo Whatsapp
         </Button>
       </Link>
     </div>
