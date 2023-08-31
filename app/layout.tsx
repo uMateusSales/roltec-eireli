@@ -7,7 +7,8 @@ import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import ModalProvider from "@/providers/modal-provider";
 import ToastProvider from "@/providers/toast-provider";
-
+import { Suspense } from "react";
+import LoadingSkeleton from "@/components/ui/loading-skeleton";
 
 const fonte = Urbanist({ subsets: ["latin"] });
 
@@ -28,13 +29,11 @@ export default function RootLayout({
       </head>
 
       <body className={fonte.className}>
-
         <ModalProvider />
         <ToastProvider />
 
         <Navbar />
-
-        {children}
+        <Suspense fallback={<LoadingSkeleton />}>{children}</Suspense>
         <Footer />
         <Analytics />
       </body>
