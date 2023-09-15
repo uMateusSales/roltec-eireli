@@ -44,14 +44,14 @@ const ProductContainer: React.FC<ProductContainerProps> = ({ data }) => {
   return (
     <div
       onClick={handleClick}
-      className="bg-white group cursor-pointer rounded-xl border p-3 space-y-4"
+      className="bg-white group cursor-pointer rounded-xl border p-3 space-y-4 shadow-sm hover:border-transparent "
     >
       <div className="aspect-square rounded-xl bg-gray-100 relative">
         <Image
           src={data?.images?.[0]?.url}
           fill
           alt="imagem do produto"
-          className="aspect-square object-cover rounded-md"
+          className="aspect-square object-cover rounded-md shadow-sm"
           placeholder="blur"
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/OXbJgAJUAORqZ+bhAAAAABJRU5ErkJggg=="
         />
