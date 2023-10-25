@@ -35,7 +35,7 @@ const Footer = () => {
           <Link
             target="_blank"
             className="text-center ml-1 p-1 border border-solid rounded shadow-md  hover:bg-blue-600 duration-300"
-            href={getLink()}
+            href="mailto:mateus.lins.sales@gmail.com?subject=Vi o seu site feito para Roltec&body=Vi o que produziu para a Roltec Rolamentos e gostei muito do seu trabalho, teria um tempo para conversar?"
           >
             Mateus Sales{" "}
             <Mail
