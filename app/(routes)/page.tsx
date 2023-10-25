@@ -12,7 +12,7 @@ export const revalidate = 9000;
 const HomePage = async () => {
   const billboard = await getBillboard("d98d2f9c-c3ad-49a8-b3a9-78cfd3d7d1a8");
   const produtos = await getProducts({
-    storeId: process.env.PUBLIC_STORE_ID,
+    storeId: "57c9eca8-2afa-495d-8a84-a3b0a6dc6e78",
   });
 
   return (
