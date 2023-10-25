@@ -1,15 +1,11 @@
 "use client";
 
+import useWindowDimensions from "@/hooks/use-window";
 import { Mail } from "lucide-react";
 import Link from "next/link";
 
 const Footer = () => {
   const getLink = () => {
-    let width =
-      window.innerWidth ||
-      document.documentElement.clientWidth ||
-      document.body.clientWidth;
-
     const phoneWhats = "5581992322222";
 
     const textWhats = `Oi, tudo bem? vi seu site da Roltec e achei muito legal!`;
@@ -18,13 +14,11 @@ const Footer = () => {
       `whatsapp://send?phone=${phoneWhats}&text=` +
       encodeURIComponent(textWhats);
 
-    if (width < 720) {
-      return whatsMobile;
-    }
-
-    return `https://web.whatsapp.com/send?phone=${phoneWhats}&text=${encodeURIComponent(
+    const whatsPc = `https://web.whatsapp.com/send?phone=${phoneWhats}&text=${encodeURIComponent(
       textWhats
     )}&app_abs`;
+
+    return whatsMobile;
   };
 
   return (
