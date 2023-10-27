@@ -1,6 +1,5 @@
 "use client";
 
-import useWindowDimensions from "@/hooks/use-window";
 import { Mail } from "lucide-react";
 import Link from "next/link";
 
