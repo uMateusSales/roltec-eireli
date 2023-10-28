@@ -10,7 +10,6 @@ import Currency from "@/components/ui/currency";
 
 import useCart from "@/hooks/use-cart";
 
-import { toast } from "react-hot-toast";
 import Link from "next/link";
 
 const Summary = () => {
@@ -18,29 +17,9 @@ const Summary = () => {
   const removeAll = useCart((state) => state.removeAll);
   const searchParams = useSearchParams();
 
-  useEffect(() => {
-    if (searchParams.get("sucess")) {
-      toast.success("Pagamento feito");
-      removeAll();
-    }
-    if (searchParams.get("canceled")) {
-      toast.error("alguma coisa deu errado");
-    }
-  }, [searchParams, removeAll]);
-
   const totalPrice = cart.reduce((total, item) => {
     return total + Number(item.price) * item.quantity;
   }, 0);
-
-  const onCheckout = async () => {
-    const response = await axios.post(
-      `${process.env.NEXT_PUBLIC_API_URL}/checkout`,
-      {
-        productIds: cart.map((i) => i.id),
-      }
-    );
-    window.location = response.data.url;
-  };
 
   const getLink = () => {
     let width =

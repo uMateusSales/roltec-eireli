@@ -6,6 +6,8 @@ import getBillboard from "@/actions/get-billboards";
 import ProductList from "@/components/product-list";
 import getProducts from "@/actions/get-products";
 import LoadingSkeleton from "@/components/ui/loading-skeleton";
+import ContactUs from "@/components/ContactUs";
+import { Separator } from "@/components/ui/separator";
 
 export const revalidate = 9000;
 
@@ -23,6 +25,8 @@ const HomePage = async () => {
         <div className="flex flex-col gap-y-8 px-4 sm:px-6 lg:px-8">
           <ProductList title="Produtos disponiveis" items={produtos} />
         </div>
+        <Separator className="h-0.5 rounded mx-1" orientation="horizontal" />
+        <ContactUs />
       </div>
     </Container>
   );

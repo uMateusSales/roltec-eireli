@@ -44,7 +44,7 @@ const ProductContainer: React.FC<ProductContainerProps> = ({ data }) => {
   return (
     <div
       onClick={handleClick}
-      className="bg-white group cursor-pointer rounded-xl border p-3 space-y-4 shadow-sm hover:border-transparent "
+      className="bg-white group cursor-pointer rounded-xl border p-3 space-y-4 shadow-md hover:border-transparent "
     >
       <div className="aspect-square rounded-xl bg-gray-100 relative">
         <Image

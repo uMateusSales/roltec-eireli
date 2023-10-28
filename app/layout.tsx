@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Urbanist } from "next/font/google";
+import { Roboto } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 
 import Footer from "@/components/footer";
@@ -10,7 +10,7 @@ import ToastProvider from "@/providers/toast-provider";
 import { Suspense } from "react";
 import LoadingSkeleton from "@/components/ui/loading-skeleton";
 
-const fonte = Urbanist({ subsets: ["latin"] });
+const fonte = Roboto({ subsets: ["latin"], weight: ["300"] });
 
 export const metadata: Metadata = {
   title: "Roltec rolamentos, correis e rodizios",
