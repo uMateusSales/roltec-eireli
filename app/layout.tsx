@@ -13,9 +13,9 @@ import LoadingSkeleton from "@/components/ui/loading-skeleton";
 const fonte = Roboto({ subsets: ["latin"], weight: ["300"] });
 
 export const metadata: Metadata = {
-  title: "Roltec rolamentos, correis e rodizios",
+  title: "Roltec rolamentos, correias e rodizios",
   description:
-    "Sua loja fornecedora de rolamentos de todos os tipos, correias transportadoras e rodizios industriais. Os melhores preços você encontra aqui!",
+    "Sua loja fornecedora de rolamentos de todos os tipos, correias transportadoras e rodizios industriais. Os melhores preços do mercado você encontra aqui!",
 };
 
 export default function RootLayout({
