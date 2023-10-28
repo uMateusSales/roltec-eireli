@@ -42,7 +42,7 @@ const ProductInfo: React.FC<ProductInfoProps> = ({ data }) => {
           />
         </div>
       </div>
-      <ButtonAddToCart data={data} />
+      <ButtonAddToCart className="mt-8" data={data} />
     </div>
   );
 };

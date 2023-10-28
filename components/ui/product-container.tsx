@@ -10,6 +10,7 @@ import { MouseEventHandler } from "react";
 import usePreviewModal from "@/hooks/use-preview-modal";
 import useCart from "@/hooks/use-cart";
 import useWindowDimensions from "@/hooks/use-window";
+import ButtonAddToCart from "./buttonAddToCart";
 
 interface ProductContainerProps {
   data: Product;
@@ -61,29 +62,25 @@ const ProductContainer: React.FC<ProductContainerProps> = ({ data }) => {
               <div className="flex items-center bg-slate-100 rounded-md p-1">
                 <IconButton
                   onClick={onPreview}
-                  icon={<Expand size={14} className="text-gray-700" />}
-                />
-              </div>
-              <div className="flex items-center bg-slate-100 rounded-md p-1">
-                <IconButton
-                  onClick={addToCart}
-                  icon={<ShoppingCart size={14} className="text-gray-700" />}
+                  icon={<Expand size={20} className="text-gray-700" />}
                 />
               </div>
             </div>
           </div>
         )}
       </div>
-      <div className="flex flex-col font-semibold  gap-1">
-        <p className=" text-zinc-900 sm:text-base md:text-lg">{data.name}</p>
-        <p className="text-sm text-zinc-600 mt-2">{data.category.name}</p>
-      </div>
-      <div className="flex items-center justify-between">
-        <Currency value={data.price} />
-        <span className="text-xs text-zinc-500">
-          {" "}
-          - Pix, boleto ou cartão de credito
-        </span>{" "}
+      <div className="flex flex-col mb-0 gap-0">
+        <div className="flex flex-col font-semibold  gap-1 mb-2">
+          <p className=" text-zinc-900 sm:text-base md:text-lg">{data.name}</p>
+          <p className="text-sm text-zinc-600 mt-2">{data.category.name}</p>
+        </div>
+        <div className="flex flex-col items-center justify-center gap-3">
+          <Currency value={data.price} />
+          <ButtonAddToCart
+            className="text-sm p-0.5 px-1.5   max-h-8 space-y-2 mt-5"
+            data={data}
+          />
+        </div>
       </div>
     </div>
   );
