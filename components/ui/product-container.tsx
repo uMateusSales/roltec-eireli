@@ -74,12 +74,16 @@ const ProductContainer: React.FC<ProductContainerProps> = ({ data }) => {
           </div>
         )}
       </div>
-      <div className="font-semibold text-lg">
-        <p>{data.name}</p>
-        <p className="text-sm text-gray-500">{data.category.name}</p>
+      <div className="flex flex-col font-semibold  gap-1">
+        <p className=" text-zinc-900 sm:text-base md:text-lg">{data.name}</p>
+        <p className="text-sm text-zinc-600 mt-2">{data.category.name}</p>
       </div>
       <div className="flex items-center justify-between">
         <Currency value={data.price} />
+        <span className="text-xs text-zinc-500">
+          {" "}
+          - Pix, boleto ou cartão de credito
+        </span>{" "}
       </div>
     </div>
   );

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-export const priceFormatter = new Intl.NumberFormat("en-US", {
+export const priceFormatter = new Intl.NumberFormat("pt-BR", {
   style: "currency",
   currency: "BRL",
 });
@@ -23,7 +23,7 @@ const Currency: React.FC<CurrencyProps> = ({ value }) => {
   }
 
   return (
-    <div className="font-semibold">{priceFormatter.format(Number(value))}</div>
+    <div className="font-semibold">{priceFormatter.format(Number(value))} </div>
   );
 };
 
