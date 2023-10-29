@@ -45,13 +45,14 @@ const ProductContainer: React.FC<ProductContainerProps> = ({ data }) => {
   return (
     <div
       onClick={handleClick}
-      className="bg-white group cursor-pointer rounded-xl border p-3 space-y-4 shadow-md hover:border-transparent "
+      className="bg-white group cursor-pointer rounded-xl border p-3  shadow-md hover:border-transparent h-[500px] md:h-[550px] flex flex-col gap-3  "
     >
       <div className="aspect-square rounded-xl bg-gray-100 relative">
         <Image
+          quality={90}
           src={data?.images?.[0]?.url}
           fill
-          alt="imagem do produto"
+          alt={data.name}
           className="aspect-square object-cover rounded-md shadow-sm"
           placeholder="blur"
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/OXbJgAJUAORqZ+bhAAAAABJRU5ErkJggg=="
@@ -69,15 +70,16 @@ const ProductContainer: React.FC<ProductContainerProps> = ({ data }) => {
           </div>
         )}
       </div>
-      <div className="flex flex-col mb-0 gap-0">
-        <div className="flex flex-col font-semibold  gap-1 mb-2">
-          <p className=" text-zinc-900 sm:text-base md:text-lg">{data.name}</p>
-          <p className="text-sm text-zinc-600 mt-2">{data.category.name}</p>
-        </div>
-        <div className="flex flex-col items-center justify-center gap-3">
+      <div className="flex flex-col mt-5 gap-3">
+        <p className=" text-zinc-900 sm:text-base md:text-lg font-semibold">
+          {data.name}
+        </p>
+        <p className="text-sm text-zinc-600 mt-2">{data.category.name}</p>
+
+        <div className="flex flex-col items-center justify-center gap-3 ">
           <Currency value={data.price} />
           <ButtonAddToCart
-            className="text-sm p-0.5 px-1.5   max-h-8 space-y-2 mt-5"
+            className=" text-xs sm:text-sm p-2 max-h-8 space-y-2 mt-5"
             data={data}
           />
         </div>
