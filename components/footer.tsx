@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail } from "lucide-react";
+import { Mail, PhoneForwarded } from "lucide-react";
 import Link from "next/link";
 
 const Footer = () => {
@@ -24,8 +24,9 @@ const Footer = () => {
     <footer className=" bg-white border-t">
       <div className="flex-col space-y-1 sm:space-y-0 sm:flex sm:flex-row justify-around mx-auto py-10">
         <div className="py-1">
-          <p className="text-center  text-sm text-black mt-[2px]">
+          <p className="gap-2 text-center font-semibold  text-sm text-black mt-[2px]">
             &copy; Todos os direitos reservados, 2023
+            <br /> Roltec Whatsapp: 81986379255
           </p>
         </div>
         <div className="text-center text-sm text-black py-1">
