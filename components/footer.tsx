@@ -30,7 +30,7 @@ const Footer = () => {
           </p>
         </div>
         <div className="text-center text-sm text-black py-1">
-          <span>Desenvolvido por:</span>
+          <span className=" font-semibold">Site desenvolvido por:</span>
 
           <Link
             target="_blank"
